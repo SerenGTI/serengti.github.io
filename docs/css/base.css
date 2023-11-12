@@ -1,0 +1,154 @@
+
+:root {
+    --step--1: clamp(0.94rem, calc(0.91rem + 0.13vw), 1.03rem);
+    --step-0: clamp(1.13rem, calc(1.06rem + 0.34vw), 1.38rem);
+    --step-1: clamp(1.35rem, calc(1.22rem + 0.66vw), 1.83rem);
+    --step-2: clamp(1.62rem, calc(1.40rem + 1.12vw), 2.44rem);
+    --step-3: clamp(1.94rem, calc(1.59rem + 1.78vw), 3.26rem);
+    --step-4: clamp(2.33rem, calc(1.79rem + 2.72vw), 4.34rem);
+    --step-5: clamp(2.80rem, calc(1.99rem + 4.05vw), 5.79rem);
+    --step-6: clamp(3.36rem, calc(2.18rem + 5.91vw), 7.71rem);
+}
+
+
+
+html {
+    overflow-y: scroll;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: "Arial";
+}
+h1 {
+    font-size: var(--step-5);
+}
+h2 {
+    font-size: var(--step-3);
+}
+h3 {
+    font-size: var(--step-2);
+}
+h4 {
+    font-size: var(--step-1);
+}
+
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px,1px,1px,1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* body and containers */
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    padding: clamp(1.69rem, calc(-0.09rem + 8.9vw), 8.25rem);
+    flex-grow: 1;
+    max-width: 65ch;
+    line-height: 1.4;
+    font-size: clamp(1.13rem, calc(1.06rem + 0.34vw), 1.38rem);
+}
+
+/* skip to content */
+
+.skip-link {
+    transform: translateY( -140px );
+    font-weight: 500;
+    border-radius: 0;
+    width: 100%;
+}
+.skip-link:focus {
+    transform: translateY( 0 );
+    position: fixed;
+    display: block;
+    clip: auto !important;
+    clip-path: none;
+    height: auto;
+    width: 100%;
+    z-index: 10;
+}
+
+/* header and navigation */
+
+.navigation {
+    padding: 1em 0em;
+    display: flex;
+    gap: var(--space-s-l);
+    align-items: center;
+    font-family: var(--font-headings);
+    flex-direction: column;
+    font-weight: 500;
+}
+
+@media (min-width: 600px) {
+    .navigation {
+        flex-direction: row;
+    }
+}
+
+.site-logo {
+    max-width: 130px;
+    height: auto;
+    padding: 1rem;
+}
+
+@media (min-width: 600px) {
+    .site-logo {
+        max-width: 100px;
+        width: 33%;
+        position: relative;
+        top: -8px;
+    }
+}
+
+.site-logo:focus {
+    outline: none;
+}
+
+.navigation {
+    padding: 0em clamp(1.69rem, calc(-0.09rem + 2.9vw), 8.25rem);
+    margin-top: 4rem;
+}
+
+.navigation-menu {
+    list-style: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    flex-grow: 1;
+}
+
+.navigation-menu li {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial";
+    font-size: 140%;
+}
+
+.navigation-menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.navigation-menu li a:focus {
+    outline-offset: 0.6ch;
+}
+
+a[aria-current="page"] {
+    color: var(--link-hover);
+    text-decoration: none;
+}

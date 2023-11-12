@@ -1,0 +1,3 @@
+[submodule "11ty_layout"]
+	path = 11ty_layout
+	url = git@github.com:SerenGTI/11ty_layout.git
