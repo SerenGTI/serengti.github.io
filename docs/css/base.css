@@ -1,5 +1,10 @@
 
 :root {
+    /*  Typography  */
+    --font-base: Georgia, Times, 'Times New Roman', serif;
+    --font-headings: Arial, Helvetica, sans-serif;
+    --font-mono: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+
     --step--1: clamp(0.94rem, calc(0.91rem + 0.13vw), 1.03rem);
     --step-0: clamp(1.13rem, calc(1.06rem + 0.34vw), 1.38rem);
     --step-1: clamp(1.35rem, calc(1.22rem + 0.66vw), 1.83rem);
@@ -14,10 +19,12 @@
 
 html {
     overflow-y: scroll;
+    font-family: var(--font-base);
 }
 
 h1,h2,h3,h4,h5 {
-    font-family: "Arial";
+    font-family: var(--font-headings);
+    color: var(--dark-1);
 }
 h1 {
     font-size: var(--step-5);
@@ -51,17 +58,22 @@ h4 {
 body {
     display: flex;
     flex-direction: column;
+    background-color: var(--light-1);
+    color: var(--dark-1);
 }
 
 #content {
     padding: clamp(1.69rem, calc(-0.09rem + 8.9vw), 8.25rem);
     flex-grow: 1;
+}
+#content p {
+    flex-grow: 1;
     max-width: 65ch;
     line-height: 1.4;
-    font-size: clamp(1.13rem, calc(1.06rem + 0.34vw), 1.38rem);
+    font-size: var(--step-0);
 }
 
-/* skip to content */
+/* skip to content button */
 
 .skip-link {
     transform: translateY( -140px );
@@ -116,6 +128,10 @@ body {
 .site-logo:focus {
     outline: none;
 }
+.site-logo svg path{
+    fill: var(--accent-light);
+    stroke: var(--accent-light);
+}
 
 .navigation {
     padding: 0em clamp(1.69rem, calc(-0.09rem + 2.9vw), 8.25rem);
@@ -148,7 +164,12 @@ body {
     outline-offset: 0.6ch;
 }
 
-a[aria-current="page"] {
+.navigation-menu li:hover a {
+    color: var(--link-hover);
+    outline-offset: 0.6ch;
+}
+
+.navigation-menu li[aria-current="page"] > a {
     color: var(--link-hover);
     text-decoration: none;
 }

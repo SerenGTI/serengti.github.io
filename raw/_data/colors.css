@@ -1,0 +1,25 @@
+
+
+:root {
+    /* basic colors */
+    --black: #000;
+    --white: #fff;
+
+
+    --accent-light: #519473;
+
+    --light-1: #E6E8E6;
+    --light-2: #CED0CE;
+    --dark-1 : #2D2D34;
+
+
+
+
+    /* colors */
+    --background: var(--light-1);
+    --foreground: var(--dark-1);
+    --foreground-soft: color-mix(in srgb, var(--nord6) 30%, var(--nord0));
+    --link: color-mix(in srgb, var(--accent-1) 70%, var(--text-dark));
+    --link-hover: var(--accent-light);
+    --divider: color-mix(in srgb, var(--accent-1) 80%, var(--text-dark));
+}

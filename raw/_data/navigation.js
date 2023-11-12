@@ -1,14 +1,18 @@
 module.exports = [
     {
         "text": "About",
-        "url": "/about/"
-    },
-    {
-        "text": "Documentation",
         "url": "/"
     },
     {
+        "text": "Projects",
+        "url": "/projects/"
+    },
+    {
+        "text": "Documentation",
+        "url": "/documentation/"
+    },
+    {
         "text": "GitHub",
-        "url": "https://github.com/serengti/"
+        "url": "https://www.github.com/serengti/"
     }
 ]
