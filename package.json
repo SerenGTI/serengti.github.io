@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "make": "npx @11ty/eleventy --input=raw/ --output=out/",
-    "serve": "npx @11ty/eleventy --input=raw/ --output=out/ --serve"
+    "make": "npx @11ty/eleventy --input=raw/ --output=docs/",
+    "serve": "npx @11ty/eleventy --input=raw/ --output=docs/ --serve"
   },
   "keywords": [],
   "author": "",
