@@ -1,0 +1,13 @@
+{
+  "name": "serengti.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "make": "npx @11ty/eleventy --input=raw/ --output=out/",
+    "serve": "npx @11ty/eleventy --input=raw/ --output=out/ --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
