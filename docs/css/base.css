@@ -1,175 +1,296 @@
-
+/* Global Variables */
 :root {
-    /*  Typography  */
-    --font-base: Georgia, Times, 'Times New Roman', serif;
-    --font-headings: Arial, Helvetica, sans-serif;
-    --font-mono: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  /*  Typography  */
+  --font-base: 'latin_modern_roman10_regular', Times, 'Times New Roman', serif;
+  --font-italic: 'latin_modern_roman10_italic', Times, 'Times New Roman', serif;
+  --font-bold: 'latin_modern_roman10_bold', Times, 'Times New Roman', serif;
+  --font-headings: 'latin_modern_roman10_bold', Arial, Helvetica, sans-serif;
+  --font-mono: "Fira Code", Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 
-    --step--1: clamp(0.94rem, calc(0.91rem + 0.13vw), 1.03rem);
-    --step-0: clamp(1.13rem, calc(1.06rem + 0.34vw), 1.38rem);
-    --step-1: clamp(1.35rem, calc(1.22rem + 0.66vw), 1.83rem);
-    --step-2: clamp(1.62rem, calc(1.40rem + 1.12vw), 2.44rem);
-    --step-3: clamp(1.94rem, calc(1.59rem + 1.78vw), 3.26rem);
-    --step-4: clamp(2.33rem, calc(1.79rem + 2.72vw), 4.34rem);
-    --step-5: clamp(2.80rem, calc(1.99rem + 4.05vw), 5.79rem);
-    --step-6: clamp(3.36rem, calc(2.18rem + 5.91vw), 7.71rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  --step-3: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+  --step-4: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  --step-5: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+
+
+  /*  Spacing  */
+  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* One-up pairs */
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* Custom pairs */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+
+  /* @link https://utopia.fyi/grid/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --grid-max-width: 90.50rem;
+  --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
 }
-
 
 
 html {
-    overflow-y: scroll;
-    font-family: var(--font-base);
+  overflow-y: scroll;
+  font-family: var(--font-base);
 }
 
 h1,h2,h3,h4,h5 {
-    font-family: var(--font-headings);
-    color: var(--dark-1);
+  font-family: var(--font-headings);
+  color: var(--dark-1);
 }
 h1 {
-    font-size: var(--step-5);
+  font-size: var(--step-4);
+  /* I hope people only have one h1.. */
+  margin-top: 0;
+  margin-bottom: var(--space-l);
 }
 h2 {
-    font-size: var(--step-3);
+  font-size: var(--step-3);
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-m);
 }
 h3 {
-    font-size: var(--step-2);
+  font-size: var(--step-2);
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-s);
 }
 h4 {
-    font-size: var(--step-1);
-}
-
-
-.screen-reader-text {
-    border: 0;
-    clip: rect(1px,1px,1px,1px);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    word-wrap: normal !important;
+  font-size: var(--step-1);
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
 }
 
 /* body and containers */
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--light-1);
-    color: var(--dark-1);
+  background-color: var(--light-1);
+  color: var(--dark-1);
+  font-size: var(--step-0);
 }
 
+
+/* Holds the content */
 #content {
-    padding: clamp(1.69rem, calc(-0.09rem + 8.9vw), 8.25rem);
-    flex-grow: 1;
+  padding: clamp(1.69rem, calc(-0.09rem + 8.9vw), 8.25rem);
+  flex-grow: 1.25;
+  max-width: var(--grid-max-width);
 }
+
 #content p {
-    flex-grow: 1;
-    max-width: 65ch;
-    line-height: 1.4;
-    font-size: var(--step-0);
+  flex-grow: 1;
+  max-width: 60ch;
+  line-height: 1.6;
+  font-size: var(--step-0);
+  text-align: justify;
+  text-indent: 1.5rem;
+  margin: 0 0;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
 }
+
+#content p i {
+  font-family: var(--font-italic);
+}
+
+#content p strong {
+  font-family: var(--font-bold);
+}
+
+
+
+
+
+
+
+
 
 /* skip to content button */
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px,1px,1px,1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
 .skip-link {
-    transform: translateY( -140px );
-    font-weight: 500;
-    border-radius: 0;
-    width: 100%;
+  transform: translateY( -140px );
+  font-weight: 500;
+  border-radius: 0;
+  width: 100%;
 }
 .skip-link:focus {
-    transform: translateY( 0 );
-    position: fixed;
-    display: block;
-    clip: auto !important;
-    clip-path: none;
-    height: auto;
-    width: 100%;
-    z-index: 10;
+  transform: translateY( 0 );
+  position: fixed;
+  display: block;
+  clip: auto !important;
+  clip-path: none;
+  height: auto;
+  width: 100%;
+  z-index: 10;
 }
+
+
+
+
 
 /* header and navigation */
-
 .navigation {
-    padding: 1em 0em;
-    display: flex;
-    gap: var(--space-s-l);
-    align-items: center;
-    font-family: var(--font-headings);
-    flex-direction: column;
-    font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: var(--space-xl);
+  gap: var(--space-s-l);
 }
 
 @media (min-width: 600px) {
-    .navigation {
-        flex-direction: row;
-    }
+  .navigation {
+    flex-direction: row;
+    align-items: baseline;
+  }
 }
 
+.site-logo svg {
+  width: 110px;
+  height: auto;
+}
 .site-logo {
-    max-width: 130px;
-    height: auto;
-    padding: 1rem;
+  margin: var(--space-xl);
+  margin-right: var(--space-l);
+  position: relative;
+  top: -4px;
 }
-
-@media (min-width: 600px) {
-    .site-logo {
-        max-width: 100px;
-        width: 33%;
-        position: relative;
-        top: -8px;
-    }
+@media (max-width: 600px) {
+  .site-logo {
+    margin: 0;
+    padding: var(--space-s);
+  }
 }
 
 .site-logo:focus {
-    outline: none;
+  outline: none;
 }
-.site-logo svg path{
-    fill: var(--accent-light);
-    stroke: var(--accent-light);
+.site-logo svg path {
+  fill: var(--dark-1);
+  stroke: var(--dark-1);
 }
 
-.navigation {
-    padding: 0em clamp(1.69rem, calc(-0.09rem + 2.9vw), 8.25rem);
-    margin-top: 4rem;
-}
 
 .navigation-menu {
-    list-style: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1em;
-    flex-grow: 1;
+  list-style: none;
+  border: 0 0;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  gap: var(--space-s);
+  flex-grow: 1;
 }
 
 .navigation-menu li {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial";
-    font-size: 140%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-headings);
+  font-weight: 500;
+  font-size: var(--step-2);
 }
 
 .navigation-menu li a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: var(--dark-1);
 }
-
 .navigation-menu li a:focus {
-    outline-offset: 0.6ch;
+  outline-offset: 0.6ch;
 }
-
 .navigation-menu li:hover a {
-    color: var(--link-hover);
-    outline-offset: 0.6ch;
+  color: var(--link-hover);
+  outline-offset: 0.6ch;
+}
+.navigation-menu li[aria-current="page"] > a {
+  color: var(--link-hover);
 }
 
-.navigation-menu li[aria-current="page"] > a {
-    color: var(--link-hover);
-    text-decoration: none;
+
+
+/* code  */
+.entry-content pre {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: var(--step-0);
+    max-width: 80ch;
+    overflow-x: scroll;
+}
+code {
+  font-family: var(--font-mono);
+}
+/* inline code */
+.entry-content p > code {
+    background-color: var(--light-2);
+    padding: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-size: var(--step-0);
+
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+}
+
+
+/* tag lists */
+
+.taglist {
+  padding-left: 0;
+}
+.taglist a {
+  text-decoration: none;
+  color: var(--dark-1);
+}
+.taglist a:hover .title {
+  color: var(--accent-light);
+  transition: 100ms ease;
+}
+
+
+.taglist .heading {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 65ch;
+}
+
+.taglist .title {
+  font-family: var(--font-bold);
+  font-size: var(--step-1);
+}
+.taglist li::marker {
+  font-size: var(--step-1);
+}
+.taglist .date {
 }

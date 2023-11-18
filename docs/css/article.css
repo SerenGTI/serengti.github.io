@@ -1,10 +1,8 @@
 
-.entry-content h1 {
-    font-size: var(--step-3);
+
+.entry-date {
+    margin-top: 7rem;
+    font-size: var(--step-0);
+    font-family: var(--font-italic);
 }
-.entry-content h2 {
-    font-size: var(--step-2);
-}
-.entry-content h3 {
-    font-size: var(--step-1);
-}
+

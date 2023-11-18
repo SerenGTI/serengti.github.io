@@ -17,6 +17,8 @@
 
     /* colors */
     --background: var(--light-1);
+    --background-dark: var(--dark-1);
+
     --foreground: var(--dark-1);
     --foreground-soft: color-mix(in srgb, var(--nord6) 30%, var(--nord0));
     --link: color-mix(in srgb, var(--accent-1) 70%, var(--text-dark));
